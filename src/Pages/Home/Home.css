@@ -1,0 +1,11 @@
+.product {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+
+@media only screen and (max-width:576px) {
+    .review {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
