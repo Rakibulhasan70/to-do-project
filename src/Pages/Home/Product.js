@@ -10,7 +10,7 @@ const Product = (props) => {
     const handleDeleteBtn = id => {
         const procced = window.confirm('Are you sure for delete ??')
         if (procced) {
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://morning-oasis-64867.herokuapp.com/product/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"
@@ -26,16 +26,16 @@ const Product = (props) => {
     }
     return (
         <div>
-            <div className='service-details'>
+            <div className='service-details mt-5'>
                 <div className='ps-2 mb-2'>
                     <h4 className='mt-3 '>Name:{name}</h4>
                     <h5>Description:{description}</h5>
                     <div className='d-flex justify-content-around mt-3'>
-                        <Link to='/add'><Button className=' justify-content-center ' variant="info">Add</Button>{' '}</Link>
                         <button className='btn btn-danger' onClick={() => handleDeleteBtn(_id)}>Delete</button>
                     </div>
                 </div>
             </div>
+
         </div >
     );
 };

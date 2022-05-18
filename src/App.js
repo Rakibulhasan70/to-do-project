@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Registration';
 import Add from './Pages/Add';
 import RequireAuth from './Pages/RequirreAuth';
+import ToDoData from './Pages/Home/ToDoData';
 // import Login from './Pages/Login/Login';
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/add' element={<RequireAuth>
           <Add></Add>
+        </RequireAuth>}></Route>
+
+        <Route path='/tododata' element={<RequireAuth>
+          <ToDoData></ToDoData>
         </RequireAuth>}></Route>
       </Routes>
     </div>

@@ -1,33 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Product from './Product';
+import React from 'react';
 import './Home.css'
+import img from '../../../src/image/istockphoto-470796518-170667a.jpg'
 
 const Home = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setProducts(data)
-            });
-    }, [products])
+
     return (
-        <div>
+        <div className='container mt-5 mb-5 '>
             <h2 style={{ color: 'purple' }} className='text-center my-5'>My To-Do Project</h2>
-
-
-            <div className="container product">
-                {
-                    products.map(product => <Product
-                        key={product._id}
-                        product={product}
-                    >
-
-                    </Product>)
-                }
-            </div>
-
+            <img style={{ height: '400px' }} className='mx-auto d-block' src={img} alt="" />
         </div>
     );
 };

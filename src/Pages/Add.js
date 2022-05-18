@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
+    const navigate = useNavigate()
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = 'http://localhost:5000/product';
+        const url = 'https://morning-oasis-64867.herokuapp.com/product';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -15,6 +17,7 @@ const Add = () => {
         })
             .then(res => res.json())
             .then(result => {
+                navigate('/tododata')
                 console.log(result);
             })
 
