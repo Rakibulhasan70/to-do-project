@@ -10,7 +10,6 @@ const ToDoData = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-
                 setProducts(data)
             });
     }, [products])
@@ -22,7 +21,6 @@ const ToDoData = () => {
                         key={product._id}
                         product={product}
                     >
-
                     </Product>)
                 }
             </div>
