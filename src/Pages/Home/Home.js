@@ -11,7 +11,7 @@ const Home = () => {
                 console.log(data);
                 setProducts(data)
             });
-    }, [])
+    }, [products])
     return (
         <div>
             <h2 style={{ color: 'purple' }} className='text-center my-5'>My To-Do Project</h2>
