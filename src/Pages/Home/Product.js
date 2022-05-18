@@ -1,6 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import UseProducts from '../../Hook/UseProducts';
 import './Product.css'
 
@@ -20,6 +18,7 @@ const Product = (props) => {
                     console.log(data)
                     const remainingItem = products.filter(product => product._id !== id)
                     setProducts(remainingItem)
+
                 })
 
         }
