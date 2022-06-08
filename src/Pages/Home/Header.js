@@ -15,7 +15,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" style={{ background: 'darkcyan' }} variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to='/home'>To-do project</Navbar.Brand>
+                    <Navbar.Brand as={Link} to='/home'>Book Publisher</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

@@ -1,12 +1,15 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import UseProfile from '../../Hook/UseProfile';
 
 
 const Update = () => {
     const { id } = useParams()
-    const [update] = UseProfile(id)
+    let [update] = UseProfile(id)
+    console.log(update);
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -21,9 +24,6 @@ const Update = () => {
         }
         console.log(info);
 
-        // const newInfo = {
-        //     ...info, email: email
-        // }
 
         const url = `http://localhost:5000/product/${id}`
         fetch(url, {
@@ -37,22 +37,25 @@ const Update = () => {
             .then(data => {
                 console.log(data)
                 toast('Update Done')
+                navigate('/home')
             })
     }
 
     return (
-        <div onSubmit={handleSubmit} className='w-50 mx-auto'>
+        <div onSubmit={handleSubmit} className='w-25 mx-auto'>
             <div>
-                <h2 className='text-center mt-4 mb-4'>Update Contact :{id}</h2>
+                <h2 className='text-center mt-4 mb-4'>Update Contact </h2>
+                <h6>id: {id}</h6>
+                <p>Name:{update?.name}</p>
                 <form>
-                    <input className='input input-bordered w-full max-w-xs  mt-3' type="photo URL" name="img" placeholder='Image' />
+                    <input className='mt-3 p-2 mx-auto w-100' type="photo URL" name="img" placeholder='Image URL' />
                     <br />
-                    <input type="text" placeholder="Name" name='name' className=" mt-2" />
+                    <input type="text" placeholder="Name" name='name' className=" mt-3 p-2 mx-auto w-100" />
                     <br />
-                    <input className='input input-bordered w-full max-w-xs  mt-3' type="text" name="description" placeholder='Description' />
+                    <input className=' mt-3 p-2 mx-auto w-100' type="text " name="description" placeholder='Description ' />
                     <br />
-                    <input type="submit" value="Update" className='input input-bordered w-full max-w-xs  mt-3 btn btn-success' />
-
+                    {/* <p>name:{update.name}</p> */}
+                    <input type="submit" value="Update" className=' mt-3 btn btn-success p-2 mx-auto w-100' />
                 </form>
 
             </div>
