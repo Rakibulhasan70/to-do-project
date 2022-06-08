@@ -6,10 +6,8 @@ import Header from './Pages/Home/Header';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Registration';
 import Add from './Pages/Add';
-import RequireAuth from './Pages/RequirreAuth';
-import ToDoData from './Pages/Home/ToDoData';
 import { ToastContainer } from 'react-toastify';
-// import Login from './Pages/Login/Login';
+import Update from './Pages/Home/Update';
 
 function App() {
   return (
@@ -17,18 +15,11 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/home' element={<RequireAuth>
-          <Home></Home>
-        </RequireAuth>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/add' element={<RequireAuth>
-          <Add></Add>
-        </RequireAuth>}></Route>
-
-        <Route path='/tododata' element={<RequireAuth>
-          <ToDoData></ToDoData>
-        </RequireAuth>}></Route>
+        <Route path='/add' element={<Add></Add>}></Route>
+        <Route path='/update/:id' element={<Update></Update>}></Route>
       </Routes>
       <ToastContainer />
     </div>
