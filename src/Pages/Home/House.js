@@ -11,7 +11,7 @@ const House = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
+        fetch(`https://morning-oasis-64867.herokuapp.com/product?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -20,7 +20,7 @@ const House = () => {
     }, [page, size])
 
     useEffect(() => {
-        fetch('http://localhost:5000/productCount')
+        fetch('https://morning-oasis-64867.herokuapp.com/productCount')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -43,7 +43,7 @@ const House = () => {
                 }
             </div>
             <div className='d-flex justify-content-around mb-5 mt-4'>
-                <Link to='/add'><button className='btn btn-info mt-4 text-center '>Add</button></Link>
+                <Link to='/add'><button className='btn btn-info mt-4 text-center '>Add Contact</button></Link>
             </div>
             <div className='pagination w-50 mx-auto my-5'>
                 <h5 className='px-3'>Page:</h5>

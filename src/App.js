@@ -8,6 +8,7 @@ import Register from './Pages/Login/Registration';
 import Add from './Pages/Add';
 import { ToastContainer } from 'react-toastify';
 import Update from './Pages/Home/Update';
+import SingleData from './Pages/Home/SingleData';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/add' element={<Add></Add>}></Route>
         <Route path='/update/:id' element={<Update></Update>}></Route>
+        <Route path='/singledata/:id' element={<SingleData></SingleData>}></Route>
       </Routes>
       <ToastContainer />
     </div>

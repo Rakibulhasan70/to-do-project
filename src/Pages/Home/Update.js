@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import UseProfile from '../../Hook/UseProfile';
@@ -25,11 +24,12 @@ const Update = () => {
         console.log(info);
 
 
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://morning-oasis-64867.herokuapp.com/product/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
-                'content-Type': 'application/json'
+                'content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(info),
         })
@@ -42,24 +42,23 @@ const Update = () => {
     }
 
     return (
-        <div onSubmit={handleSubmit} className='w-25 mx-auto'>
-            <div>
-                <h2 className='text-center mt-4 mb-4'>Update Contact </h2>
-                <h6>id: {id}</h6>
-                <p>Name:{update?.name}</p>
-                <form>
-                    <input className='mt-3 p-2 mx-auto w-100' type="photo URL" name="img" placeholder='Image URL' />
-                    <br />
-                    <input type="text" placeholder="Name" name='name' className=" mt-3 p-2 mx-auto w-100" />
-                    <br />
-                    <input className=' mt-3 p-2 mx-auto w-100' type="text " name="description" placeholder='Description ' />
-                    <br />
-                    {/* <p>name:{update.name}</p> */}
-                    <input type="submit" value="Update" className=' mt-3 btn btn-success p-2 mx-auto w-100' />
-                </form>
+        <div>
+            <div onSubmit={handleSubmit} className='w-25 mx-auto'>
+                <div>
+                    <h2 className='text-center mt-4 mb-4'>Update Contact </h2>
+                    <form>
+                        <input className='mt-3 p-2 mx-auto w-100' type="photo URL" required name="img" placeholder='Image URL' />
+                        <br />
+                        <input type="text" placeholder="Name" name='name' required className=" mt-3 p-2 mx-auto w-100" />
+                        <br />
+                        <input className=' mt-3 p-2 mx-auto w-100' type="text " required name="description" placeholder='Description ' />
+                        <br />
+                        <input type="submit" value="Update" className=' mt-3 btn btn-success p-2 mx-auto w-100' />
+                    </form>
+
+                </div>
 
             </div>
-
         </div>
     );
 };
