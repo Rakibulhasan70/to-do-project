@@ -11,6 +11,7 @@ import Update from './Pages/Home/Update';
 import SingleData from './Pages/Home/SingleData';
 import TodoRoute from './Pages/TodoRoute';
 import Calendar from './Pages/Calendar';
+import CompleteTask from './Pages/CompleteTask';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/todo' element={<TodoRoute></TodoRoute>}></Route>
         <Route path='/add' element={<Add></Add>}></Route>
         <Route path='/calendar' element={<Calendar></Calendar>}></Route>
+        <Route path='/complete' element={<CompleteTask></CompleteTask>}></Route>
         <Route path='/update/:id' element={<Update></Update>}></Route>
         <Route path='/singledata/:id' element={<SingleData></SingleData>}></Route>
       </Routes>

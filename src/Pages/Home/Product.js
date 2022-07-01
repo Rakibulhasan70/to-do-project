@@ -41,9 +41,9 @@ const Product = (props) => {
         <div>
             <div className='service-details mt-5'>
                 <div className='ps-2 mb-2'>
-                    {/* <img width='300px' height='200px' src={img} alt="" /> */}
-                    <h4 className='mt-3 '>Name:{name}</h4>
+                    <h4 className='mt-3'> Name:{name}</h4>
                     <p>Description: {description}</p>
+                    <input type="checkbox" />
                     <div className='d-flex justify-content-around mt-3'>
                         <Button variant="outline-danger" onClick={() => handleDeleteBtn(_id)}>Delete</Button>{' '}
                         <Button onClick={() => handleNavigate(_id)} variant="outline-primary">Update</Button>{' '}

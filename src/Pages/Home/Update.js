@@ -12,12 +12,10 @@ const Update = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const img = e.target.img.value
         const name = e.target.name.value
         const description = e.target.description.value;
 
         const info = {
-            img,
             name,
             description
         }
@@ -47,8 +45,6 @@ const Update = () => {
                 <div>
                     <h2 className='text-center mt-4 mb-4'>Update Contact </h2>
                     <form>
-                        <input className='mt-3 p-2 mx-auto w-100' type="photo URL" name="img" placeholder='Image URL' />
-                        <br />
                         <input type="text" placeholder="Name" name='name' required className=" mt-3 p-2 mx-auto w-100" />
                         <br />
                         <input className=' mt-3 p-2 mx-auto w-100' type="text " name="description" placeholder='Description ' />
