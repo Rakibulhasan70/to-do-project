@@ -6,7 +6,7 @@ import UseProducts from '../../Hook/UseProducts';
 import './Product.css'
 
 const Product = (props) => {
-    const { _id, name, img } = props.product
+    const { _id, name, img, description } = props.product
     const navigate = useNavigate()
     const [products, setProducts] = UseProducts()
 
@@ -41,12 +41,12 @@ const Product = (props) => {
         <div>
             <div className='service-details mt-5'>
                 <div className='ps-2 mb-2'>
-                    <img width='300px' height='200px' src={img} alt="" />
+                    {/* <img width='300px' height='200px' src={img} alt="" /> */}
                     <h4 className='mt-3 '>Name:{name}</h4>
+                    <p>Description: {description}</p>
                     <div className='d-flex justify-content-around mt-3'>
                         <Button variant="outline-danger" onClick={() => handleDeleteBtn(_id)}>Delete</Button>{' '}
                         <Button onClick={() => handleNavigate(_id)} variant="outline-primary">Update</Button>{' '}
-                        <Button onClick={() => handleASingle(_id)} variant="outline-success">Details</Button>{' '}
                     </div>
                 </div>
             </div>

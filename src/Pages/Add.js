@@ -27,14 +27,13 @@ const Add = () => {
     return (
         <div className='w-50 mx-auto'>
             <div>
-                <h2 className='text-center mt-4 mb-4'>Add New Contact</h2>
+                <h2 className='text-center mt-4 mb-4'>Add New Task</h2>
             </div>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-                <input className='mb-3 p-2 rounded border-1' placeholder='img' {...register("img")} />
-
-                <input className='mb-3 p-2 rounded border-1' placeholder='you name' {...register("name")} />
-                <textarea className='mb-3 p-3 rounded border-1' placeholder='you description  ' {...register("description")} />
-                <input className='mb-3 border-0 rounded-pill p-2 text-2xl bg-info' type="submit" value='Add' />
+                {/* <input className='mb-3 p-2 rounded border-1' placeholder='img' {...register("img")} /> */}
+                <input className='mb-3 p-2 rounded border-1' placeholder='Name' {...register("name")} />
+                <input className='mb-3 p-3 rounded border-1' placeholder='Task Details ' {...register("description")} />
+                <input className='mb-3 p-2 bg-info border-0 rounded' type="submit" value='Add' />
             </form>
         </div>
     );

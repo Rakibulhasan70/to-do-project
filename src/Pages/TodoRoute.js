@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './House.css'
-import Product from './Product';
 import { Link } from 'react-router-dom';
+import Product from './Home/Product';
 
-const House = () => {
+const TodoRoute = () => {
     const [products, setProducts] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0)
     const [size, setSize] = useState(20)
-
 
     useEffect(() => {
         fetch(`https://morning-oasis-64867.herokuapp.com/product?page=${page}&size=${size}`)
@@ -29,13 +27,9 @@ const House = () => {
                 setPageCount(pages)
             })
     }, [])
-
     return (
         <div className='container'>
-            <h2 className='mt-5 text-center text-purple'>Book Store</h2>
-            <div className='d-flex justify-content-around  mt-4'>
-                <Link to='/add'><button className='btn btn-info mt-4 text-center'>Add Contact</button></Link>
-            </div>
+            <h2 className='mt-5 text-center' style={{ color: 'purple' }}>To-Do Store</h2>
             <div className="container product mb-5">
                 {
                     products.map(product => <Product
@@ -50,4 +44,4 @@ const House = () => {
     );
 };
 
-export default House;
+export default TodoRoute;

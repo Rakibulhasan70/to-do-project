@@ -47,11 +47,11 @@ const Update = () => {
                 <div>
                     <h2 className='text-center mt-4 mb-4'>Update Contact </h2>
                     <form>
-                        <input className='mt-3 p-2 mx-auto w-100' type="photo URL" required name="img" placeholder='Image URL' />
+                        <input className='mt-3 p-2 mx-auto w-100' type="photo URL" name="img" placeholder='Image URL' />
                         <br />
                         <input type="text" placeholder="Name" name='name' required className=" mt-3 p-2 mx-auto w-100" />
                         <br />
-                        <input className=' mt-3 p-2 mx-auto w-100' type="text " required name="description" placeholder='Description ' />
+                        <input className=' mt-3 p-2 mx-auto w-100' type="text " name="description" placeholder='Description ' />
                         <br />
                         <input type="submit" value="Update" className=' mt-3 btn btn-success p-2 mx-auto w-100' />
                     </form>
