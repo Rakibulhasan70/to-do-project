@@ -5,7 +5,8 @@ import 'react-day-picker/dist/style.css';
 const Calendar = () => {
 
     return (
-        <div className='w-50 mx-auto my-5'>
+        <div className='container'>
+            <h2 className='mb-5'>Calendar</h2>
             <DayPicker />
         </div>
     );
